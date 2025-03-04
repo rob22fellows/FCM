@@ -1,1 +1,1 @@
-const String appName = 'Push notifications demo';
+const String appName = 'BoatMonitor32';

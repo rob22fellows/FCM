@@ -1,4 +1,4 @@
-name: BoatMonitor32
+name: boat_monitor32
 description: A Flutter app that integrates Firebase Cloud Messaging
 publish_to: 'none'
 version: 2.5.0+1
@@ -11,7 +11,7 @@ dependencies:
   firebase_messaging: ^14.7.19
   flutter:
     sdk: flutter
-  flutter_local_notifications: ^17.0.0
+  flutter_local_notifications: ^18.0.1
 
 dev_dependencies:
   flutter_test:

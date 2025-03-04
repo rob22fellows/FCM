@@ -4,7 +4,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class NotificationService {
   ///single instance of FCM
-  static final _messaging = FirebaseMessaging.instance;
+  static final FirebaseMessaging messaging = FirebaseMessaging.instance;
 
   ///To store the FCM token
   static String? _token;
@@ -32,7 +32,7 @@ class NotificationService {
 
   ///ask permission from the user to display notifications
   static void _requestPermission() async {
-    final settings = await _messaging.requestPermission(
+    final settings = await messaging.requestPermission(
       alert: true,
       announcement: false,
       badge: true,
@@ -54,10 +54,10 @@ class NotificationService {
 
   ///setup the FCM token to receive notifications
   static void _getFCMToken() async {
-    _token = await _messaging.getToken();
+    _token = await messaging.getToken();
 
     ///onTokenRefresh stream allows us to listen to the token value whenever it changes
-    _messaging.onTokenRefresh.listen((newValue) {
+    messaging.onTokenRefresh.listen((newValue) {
       _token = newValue;
     });
 
@@ -85,7 +85,7 @@ class NotificationService {
 
     /** Update the iOS foreground notification presentation options to allow
      heads up notifications. */
-    await _messaging.setForegroundNotificationPresentationOptions(
+    await messaging.setForegroundNotificationPresentationOptions(
       alert: true,
       badge: true,
       sound: true,

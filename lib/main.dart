@@ -1,6 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:firebase_messaging_demo/constants/strings.dart';
-import 'package:firebase_messaging_demo/service/notifications_service.dart';
+import 'service/notifications_service.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -38,13 +37,13 @@ class _FirebaseMessagingDemoState extends State<FirebaseMessagingDemo> {
   }
 
   void _getFCMToken() {
-    NotificationService._messaging.getToken().then((token) {
+    NotificationService.messaging.getToken().then((token) {
       setState(() {
         _token = token ?? 'Failed to get token';
       });
     });
 
-    NotificationService._messaging.onTokenRefresh.listen((newValue) {
+    NotificationService.messaging.onTokenRefresh.listen((newValue) {
       setState(() {
         _token = newValue;
       });
@@ -54,7 +53,7 @@ class _FirebaseMessagingDemoState extends State<FirebaseMessagingDemo> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: appName,
+      title: 'BoatMonitor32',
       home: Scaffold(
         body: Center(
           child: Text('FCM Token: $_token'),
