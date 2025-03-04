@@ -21,16 +21,43 @@ void main() async {
   runApp(const FirebaseMessagingDemo());
 }
 
-class FirebaseMessagingDemo extends StatelessWidget {
+class FirebaseMessagingDemo extends StatefulWidget {
   const FirebaseMessagingDemo({super.key});
 
   @override
+  _FirebaseMessagingDemoState createState() => _FirebaseMessagingDemoState();
+}
+
+class _FirebaseMessagingDemoState extends State<FirebaseMessagingDemo> {
+  String _token = 'Fetching token...';
+
+  @override
+  void initState() {
+    super.initState();
+    _getFCMToken();
+  }
+
+  void _getFCMToken() {
+    NotificationService._messaging.getToken().then((token) {
+      setState(() {
+        _token = token ?? 'Failed to get token';
+      });
+    });
+
+    NotificationService._messaging.onTokenRefresh.listen((newValue) {
+      setState(() {
+        _token = newValue;
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: appName,
       home: Scaffold(
         body: Center(
-          child: Text('Flutter push notifications demo'),
+          child: Text('FCM Token: $_token'),
         ),
       ),
     );
