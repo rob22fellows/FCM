@@ -62,8 +62,7 @@ class NotificationService {
     });
 
     debugPrint('FCM Token: $_token');
-    Print('FCM Token: $_token');
-  }
+    }
 
   static void _configureLocalNotificationPlugin() async {
     const AndroidInitializationSettings initializationSettingsAndroid =
