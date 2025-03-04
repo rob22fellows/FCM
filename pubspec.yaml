@@ -1,7 +1,7 @@
-name: firebase_messaging_demo
-description: "A new Flutter project."
+name: BoatMonitor32
+description: A Flutter app that integrates Firebase Cloud Messaging
 publish_to: 'none'
-version: 0.1.0
+version: 2.5.0+1
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
