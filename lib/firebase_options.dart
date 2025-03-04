@@ -58,11 +58,11 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCPkpTdzeUQgdp2pVzyCFBoU-65_jqCB2U',
-    appId: '1:1069988260454:ios:a1d3a1eaa95feb063f5ba7',
-    messagingSenderId: '1069988260454',
-    projectId: 'push-notifications-demo-206ab',
-    storageBucket: 'push-notifications-demo-206ab.appspot.com',
-    iosBundleId: 'com.example.firebaseMessagingDemo',
+    apiKey: 'AIzaSyDdJz7_NEyRoREF1lgBk2QTna4q3Coo2pQ',
+    appId: '1:207712484424:ios:832f20e3628add8090ec7d',
+    messagingSenderId: '207712484424',
+    projectId: 'flutterble-e15f3',
+    storageBucket: 'flutterble-e15f3.firebasestorage.app',
+    iosBundleId: 'com.monitor.boat',
   );
 }
